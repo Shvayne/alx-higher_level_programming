@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/python3
 
 if [ -z "$PYFILE" ]; then
 	exit 1
