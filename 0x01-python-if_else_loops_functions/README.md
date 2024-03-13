@@ -1,0 +1,1 @@
+This folder contains introductory projects to python's looping procedure 
