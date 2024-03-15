@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 
-from add_0.py import add
+from add_0 import add
 
 def main():
     a = 1
