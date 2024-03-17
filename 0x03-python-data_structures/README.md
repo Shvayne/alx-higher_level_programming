@@ -1,0 +1,1 @@
+This module contains python code demonstrating various data structures and their usage in python programming. The provided examples covers lists, tuples, dictionaries and list comprehensions.
