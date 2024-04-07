@@ -30,6 +30,7 @@ class Square:
         elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
+
     @property
     def position(self):
         """getter method for position attribute"""
@@ -41,6 +42,9 @@ class Square:
         """setter method  for attribute
         Args:
             value(tuple): new value for position attribue
+            raises a typeerror if value is not a tuple, or if
+            value is not a tple of size 2 of if any of the contents of the
+            tuple is not an int or if any of the content is less than zero
         """
         if not isinstance(value, tuple) or len(value) != 2 or not all(isinstance(i, int) for i in value) or any(i < 0 for i in value):
              raise TypeError("position must be a tuple of 2 positive integers")
@@ -52,6 +56,7 @@ class Square:
         returns: the area of a square object
         """
         return (self.__size ** 2)
+
     def my_print(self):
         """method for printing the triange"""
         if self.__size == 0:
