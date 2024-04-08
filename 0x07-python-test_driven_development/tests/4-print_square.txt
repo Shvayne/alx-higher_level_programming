@@ -1,0 +1,33 @@
+Tests for 4-print_square.py
+===========================
+
+This module has a print_square function that prints a square with '#' characters
+
+print_square(size) prints a <size> sized square with hashes (#)
+size is required and must be positive
+
+import the function:
+    >>> printS = __import__('4-print_square').print_square
+
+takes an int for size:
+    >>> printS(4)
+    ####
+    ####
+    ####
+    ####
+
+zero input prints nothing:
+    >>> printS(0)
+
+
+does not accept negative input:
+    >>> printS(-4)
+    Traceback (most recent call last):
+        ...
+    ValueError: size must be >=0
+
+does not accept a float input:
+    >>> printS(4.3)
+    Traceback (most recent call last):
+        ...
+    TypeError: size must be an integer

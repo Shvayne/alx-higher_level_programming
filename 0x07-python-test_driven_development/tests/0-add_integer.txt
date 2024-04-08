@@ -1,0 +1,99 @@
+Tests for add_integer function
+==============================
+
+The add_integer function takes two integers or float
+and return the sum
+
+Usage cases
+===========
+
+importing the function:
+    >>> add_integer = __import__('0-add_integer').add_integer
+
+two positive ints (a=2 and b=5)
+    >>> add_integer(2, 5)
+    7
+
+one negative int (a = -2 and b = 5)
+    >>> add_integer(-2, 5)
+    3
+
+two negative ints (a = -2 and b = -5)
+    >>> add_integer(-2, -5)
+    -7
+
+one zero value and a negative value (a = 0, b = -5)
+    >>> add_integer(0, -5)
+    -5
+
+addition with the default value (a = 2, b=98)
+    >>> add_integer(2)
+    100
+
+additon of one float and one int (a = 2, b = 5.4)
+    >>> add_integer(2, 5.4)
+    7
+
+addition of two floats (a = 2.5, b = 5.5)
+    >>> add_integer(2.5, 5.5)
+    7
+
+addition of one float and default value (a = 2.5, b = 98)
+    >>> add_integer(2.5)
+    100
+
+addition of one positive float and one negative num (a = 2.5, b=-5)
+    >>> add_integer(2.5, -5)
+    -3
+
+addition of two negative floats (a=-2.5, b=-5.5)
+    >>> add_integer(-2.5, -5.5)
+    -7
+
+an int and a string(a = 4, b = "mama")
+    >>> add_integer(4, "mama")
+    Traceback (most recent call last):
+        ...
+    TypeError: b must be an integer
+
+addition of a tuple (a = (2, 0), b = 0)
+    >>> add_integer((2, 0), 0)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+addition of a list and an int(a = [], b = 4)
+    >>> add_integer([2, 4, 5], 4)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+passing no args
+    >>> add_integer(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: a must be an integer
+
+Test for overflow:
+-----------------
+    >>> add_integer(float('inf'), 1)
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+    >>> add_integer(float('inf'), float('-inf'))
+    Traceback (most recent call last):
+        ...
+    OverflowError: cannot convert float infinity to integer
+
+test for NaN:
+------------
+    >>> add_integer(float('nan'), 1)
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer
+
+    >>> add_integer(float('nan'))
+    Traceback (most recent call last):
+        ...
+    ValueError: cannot convert float NaN to integer

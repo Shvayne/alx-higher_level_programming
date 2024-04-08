@@ -1,0 +1,51 @@
+Tests for 3-say_my_name.py
+==========================
+
+this module has a say_my_name function that takes two strings and prints them out, introducing the user
+say_my_name(first_name, last_name="")
+prints My name is {first_name} {last_name}
+last_name has a default empty string
+
+import the function:
+    >>> say = __import__('3-say_my_name').say_my_name
+
+takes two strings:
+    >>> say("Tiana", "Apinoko")
+    My name is Tiana Apinoko
+
+takes one string and uses the default:
+    >>> say("Tiana")
+    My name is Tiana 
+
+needs at least one argument:
+    >>> say()
+    Traceback (nost recent call last):
+        ...
+    TypeError: say_my_name() missing 1 required positional argument: 'first_name'
+
+none as first argument
+    >>> say(None)
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+Invalid inputs
+==============
+
+list input as first_name:
+    >>> say(["Tiana", "Apinoko"], "josh")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
+
+tuple input as last_name:
+    >>> say("Tiana", ("Apinoko", "James"))
+    Traceback (most recent call last):
+        ...
+    TypeError: last_name must be a string
+
+number as first_name:
+    >>> say(50, "Apinoko")
+    Traceback (most recent call last):
+        ...
+    TypeError: first_name must be a string
