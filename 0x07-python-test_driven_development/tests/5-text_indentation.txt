@@ -1,0 +1,86 @@
+tests for 5-text indentation.py
+===============================
+
+this module contains a text indentation function ``text_indentation(text)``
+text is printed with two new lines after these characters ('.', '?', ':').
+
+::
+importing the funnction:
+    >>> text_indent = __import__('5-text_indentation').text_indentation
+    >>> text_indent("Hello.")
+    Hello.
+    <BLANKLINE>
+
+no spaces at the beginning of a line:
+
+::
+    >>> text_indent("    yo:")
+    yo:
+    <BLANKLINE>
+
+no spaces printed at the end of a line:
+
+::
+    >>> text_indent("Hello?    ")
+    Hello?
+    <BLANKLINE>
+
+::
+    >>> text_indent("       space before.space after?      ")
+    space before.
+    <BLANKLINE>
+    space after?
+    <BLANKLINE>
+
+new lines in string are printed normally:
+
+::
+    >>> text_indent("this will contain a new line! here it is:\nthanks.")
+    this will contain a new line! here it is:
+    <BLANKLINE>
+    <BLANKLINE>
+    thanks.
+    <BLANKLINE>
+
+::
+    >>> text_indent("\n\n\n printing three new lines:")
+    <BLANKLINE>
+    <BLANKLINE>
+    <BLANKLINE>
+    printing three new lines:
+    <BLANKLINE>
+
+invalid text
+============
+
+``text`` must be a string else a TypeError is raised
+
+::
+    >>> text_indent(7)
+    Traceback (most recent call last):
+        ...
+    TypeError: text must be a string
+
+::
+    >>> text_indent("one 1: will work")
+    one 1:
+    <BLANKLINE>
+    will work
+
+::
+    >>> text_indent(({"one": 1, "two": 2}))
+    Traceback (most recent call last)
+        ...
+    TypeError: text must a string
+
+::
+    >>> text_indent(None)
+    Traceback (most recent call last)
+        ...
+    TypeError: text must a string
+
+::
+    >>> text_indent(["i love You"])
+    Traceback (most recent call last)
+        ...
+    TypeError: text must a string
