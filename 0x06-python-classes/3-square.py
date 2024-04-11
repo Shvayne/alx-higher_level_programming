@@ -1,15 +1,13 @@
 #!/usr/bin/python3
-"""defines a square class
-"""
+"""module that conatains a square class"""
 class Square:
     """defines a square class for creation of square objects"""
     def __init__(self, size=0):
-"""constructor method
+        """constructor method
 
         Args:
             size (int): size of square instance
         """
-
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
         elif size < 0:

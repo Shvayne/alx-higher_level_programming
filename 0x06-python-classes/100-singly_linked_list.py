@@ -1,9 +1,8 @@
 #!/usr/bin/python3
-
+"""a singly linked list module"""
 class Node:
    """Defines the node of a singly linked list"""
-    def __init__(self, data, next_node=None):
-
+   def __init__(self, data, next_node=None):
         """constructor method for Node
         Args:
             data(int): data of the node
@@ -11,20 +10,18 @@ class Node:
         """
         self.data = data
         self.next_node = next_node
-
     @property
-    def data(self):
+   def data(self):
         """getter method to retrive a data in a node"""
         return self.__data
+   @data.setter
+   def data(self, value):
+    """setter method for data in a node
 
-    @data.setter
-    def data(self, value):
-        """setter method for data in a node
-
-        Args: value (int) - value to set data to
-        """
-        if not isinstance(value, int):
-            raise TypeError("data must be an integer")
+    Args: value (int) - value to set data to
+    """
+    if not isinstance(value, int):
+        raise TypeError("data must be an integer")
         self.__data = value
 
     @property
