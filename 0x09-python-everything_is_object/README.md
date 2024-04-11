@@ -1,0 +1,1 @@
+This repository contains solutions to the tasks assigned in the "0x09. Python - Everything is Object" project of the ALX School curriculum. The project focuses on understanding the concept of objects in Python, including mutability, immutability, object identity, and more.
