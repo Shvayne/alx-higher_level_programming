@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""this module contains a rectangle class"""
 class Rectangle():
     def __init__(self, width=0, height=0):
         """constructor method

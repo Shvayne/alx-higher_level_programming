@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+"""this module contains a rectangle class"""
 class Rectangle():
     number_of_instances = 0
     print_symbol = '#'
