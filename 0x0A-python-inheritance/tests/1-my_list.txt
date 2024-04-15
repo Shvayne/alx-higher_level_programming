@@ -1,0 +1,55 @@
+Documentation for 1-my_list.py
+==============================
+this module conatains the implementation of a MyList subclass inheriting from the built in List class
+
+Usage
+=====
+
+a_list = MyList() how to create a new instance
+
+import the class:
+    >>> MyList = __import__('1-my_list').MyList
+
+create a new instance:
+    >>> new_list = MyList()
+
+append elements to the instance:
+    >>> new_list.append(10)
+    >>> new_list.append(30)
+    >>> new_list.append(20)
+    >>> new_list.append(50)
+    >>> new_list.append(40)
+
+print elements of the instance:
+    >>> print(new_list)
+    [10, 30, 20, 50, 40]
+
+using print_sorted method:
+    >>> new_list.print_sorted()
+    [10, 20, 30, 40, 50]
+    >>> print(new_list)
+    [10, 30, 20, 50, 40]
+
+passing a list obj:
+    >>> lis = [40, 30, 100]
+    >>> new_list1 = MyList(lis)
+    >>> new_list1.print_sorted()
+    [30, 40, 100]
+
+empty string:
+    >>> lis = []
+    >>> new_list1 = MyList(lis)
+    >>> new_list1.print_sorted()
+    []
+
+list of negative numbers:
+    >>> lis = [-2, -4, -1]
+    >>> new_list1 = MyList(lis)
+    >>> new_list1.print_sorted(lis)
+    [-4, -2, -1]
+
+list of same numbe:
+    >>> lis = [10, 10, 10, 10, 10]
+    >>> new_list1 = MyList(lis)
+    >>> new_list1.print_sorted(lis)
+    [10, 10, 10, 10, 10]
