@@ -1,4 +1,4 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 """this module contains a subclass MyList of a parent List class"""
 class MyList(list):
     """subclass Mylist inheriting from list class"""

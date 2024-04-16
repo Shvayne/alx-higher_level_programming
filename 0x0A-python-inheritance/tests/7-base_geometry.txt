@@ -1,0 +1,58 @@
+Documentation for 7-base_geometry.py
+==============================
+this module conatains the implementation of a geometry class
+
+Usage
+=====
+
+import the class:
+    >>> BaseG = __import__('7-base_geometry').Base_geometry
+
+create an instance of the class:
+    >>> Bg = Base_geometry()
+normal Usage
+============
+    >>> bg.integer_validator("my_int", 12)
+
+error output
+============
+    >>> bg.area()
+    Traceback (most recent call last):
+        ...
+    Exception: area() is not implemented
+
+    >>> bg.area(2)
+    Traceback (most recent call last):
+        ...
+    TypeError: area() takes 1 positional argument but 2 were given
+
+    >>> bg.integer_validator()
+    Traceback (most recent call last):
+        ...      
+    TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+    >>> bg.integer_validator("no_value")
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+    >>> bg.integer_validator("excess_values", 23, 5)
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() takes 3 positional arguments but 4 were given
+
+    >>> bg.integer_validator("width", 0)
+    Traceback (most recent call last):
+        ...
+    ValueError: width must be greater than 0
+
+    >>> bg.integer_validator("dims", [2, 1])
+    Traceback (most recent call last):
+        ...
+    TypeError: dims must be an integer
+
+    >>> bg.integer_validator("width", -4)
+    Traceback (most recent call last):
+        ...
+    ValueError: width must be greater than 0 
+    
