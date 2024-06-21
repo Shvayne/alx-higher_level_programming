@@ -10,8 +10,7 @@ class Rectangle {
             this.width = w;
             this.height = h;
         } else {
-            let empty = Object.create(null);
-            console.log(empty);
+            return {};
         }
 
     }
