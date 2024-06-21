@@ -2,18 +2,25 @@
 /**
  * A rectangle class that defines a rectangle
  * and returns an empty object for any invalid
- * input
+ * input and prints the rectangle
  */
 class Rectangle {
     constructor(w, h){
-        if (w > 0 && h > 0 && Number.isInteger(w) && Number.isInteger){
+        if (h > 0 && w > 0 && Number.isInteger(w) && Number.isInteger(h)){
             this.width = w;
             this.height = h;
         } else {
             let empty = Object.create(null);
             console.log(empty);
         }
-
+    }
+    print(){
+        if (this.width && this.height){
+            const row = 'X'.repeat(this.width);
+            for (let i = 0; i < this.height; i++){
+                console.log(row);
+            }
+        }
     }
 }
 module.exports = Rectangle;
