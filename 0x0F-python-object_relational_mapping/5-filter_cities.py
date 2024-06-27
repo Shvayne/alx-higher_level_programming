@@ -21,10 +21,10 @@ if __name__ == "__main__":
             )
     cursor = db.cursor()
     query = """
-    SELECT cities.id, cities.name
+    SELECT cities.name\
     FROM cities
-    JOIN states ON cities.state_id = states.id
-    WHERE states.name = %s
+    JOIN states ON cities.state_id = states.id\
+    WHERE states.name LIKE BINARY %(state_name)s\
     ORDER BY cities.id ASC
     """
     cursor.execute(query, (state_name,))
@@ -35,3 +35,4 @@ if __name__ == "__main__":
 
     cursor.close()
     db.close()
+
