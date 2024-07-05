@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 # A bash script that requests from a URL and sends a response
 
 if [ -z "$1" ]; then
