@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-import requests
 """this script fetches a url status"""
+import requests
+
 if __name__ == "__main__":
     url = 'https://alx-intranet.hbtn.io/status'
     response = requests.get(url)

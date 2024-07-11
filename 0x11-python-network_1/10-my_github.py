@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+"""takes your github credentials (username and password) and
+uses the Github API to display ur id"""
 import requests
 import sys
-""" takes your GitHub credentials (username and password) and uses the GitHub API to display your id"""
 
 if __name__ == "__main__":
     username = sys.argv[1]

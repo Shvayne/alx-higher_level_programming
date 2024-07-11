@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+"""prints the last 10 commits of a user"""
 import requests
 import sys
-"""prints the last 10 commits of a user"""
+
 if __name__ == "__main__":
     owner = sys.argv[1]
     repo = sys.argv[2]

@@ -1,7 +1,7 @@
 #!/usr/bin/python3
+"""takes in a letter and sends a post request with the letter as a param"""
 import requests
 import sys
-"""takes in a letter and sends a post request with the letter as a parameter"""
 
 if __name__ == "__main__":
     if len(sys.argv) > 1:

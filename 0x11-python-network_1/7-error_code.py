@@ -1,11 +1,9 @@
 #!/usr/bin/python3
+"""takes a url and sends a request to
+the url and display the body od the respomse"""
 import requests
 import sys
-"""
-a Python script that takes in a URL, 
-sends a request to the URL and 
-displays the body of the response
-"""
+
 
 if __name__ == "__main__":
     url = sys.argv[1]

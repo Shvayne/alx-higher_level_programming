@@ -1,7 +1,8 @@
 #!/usr/bin/python3
+"""sends a post request to a url"""
 import requests
 import sys
-"""sends a post request to a url"""
+
 
 if __name__ == "__main__":
     url = sys.argv[1]
