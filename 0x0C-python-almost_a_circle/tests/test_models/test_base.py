@@ -2,54 +2,82 @@
 """Tests cases for base class"""
 import unittest
 from models.base import Base
+from models.square import Square
+import json
 
-class TestBase(unittest.TestCase):
+class TestBaseClass(unittest.TestCase):
     """Test cases for Base class"""
 
-    def test_default_initialization(self):
-        """test default initialzation of base object"""
+    def test_id_none(self):
+        """test no id"""
         b = Base()
-        self.assertEqual(b.id, 1)
+        self.assertEqual(1, b.id)
 
-    def test_initialization(self):
+    def test_id(self):
         """Test initialization of base object with Id provided"""
         b = Base(10)
-        self.assertEqual(b.id, 10)
+        self.assertEqual(10, b.id)
 
-    def test_uniqueness_of_ids(self):
-        """Test uniqueness of IDs among Base objects"""
-        b1 = Base()
-        b2 = Base()
-        b3 = Base()
-        self.assertNotEqual(b1.id, b2.id)
-        self.assertNotEqual(b1.id, b3.id)
-        self.assertNotEqual(b2.id, b3.id)
-
-    def test_negative_int_initialization(self):
-        """Test negative ID initialization"""
-        b = Base(-1)
-        self.assertEqual(b.id, -1)
-
-    def test_initialization_with_non_int_id(self):
-        """test string initialization"""
-        b = Base("maria")
-        self.assertEqual(b.id, "maria")
-
-    def test_initialization_with_list(self):
-        """test for list initialization"""
-        b = Base([1, 2, 3])
-        self.assertEqual(b.id, [1, 2, 3])
-
-    def test_zero(self):
-        """test for zero id initialzation"""
+    def test_id_zero(self):
+        """test sendig a zero id"""
         b = Base(0)
-        self.assertEqual(b.id, 0)
+        self.assertEqual(0, b.id)
 
-    def test_tuple(self):
-        """Test for tuple id initialization"""
-        b = Base((1, 2))
-        self.assertEqual(b.id, (1, 2))
+    def test_id_negative(self):
+        """test with a negative id"""
+        b = Base(-20)
+        self.assertEqual(-20, b.id)
 
-if __name__ == '__main__':
+    def test_id_string(self):
+        """test a non int id"""
+        b = Base("sza")
+        self.assertEqual("sza", b.id)
+
+    def test_id_list(self):
+        """test a non int id"""
+        b = Base([1, 2, 3])
+        self.assertEqual([1, 2, 3], b.id)
+
+    def test_id_dict(self):
+        """test an id that is not an int"""
+        b = Base({"id": 109})
+        self.assertEqual({"id": 109}, b.id)
+
+    def test_id_tuple(self):
+        """test an id that is not an int """
+        b = Base((8,))
+        self.assertEqual((8,), b.id)
+
+    def test_to_json_type(self):
+        """Testing the json string"""
+        sq = Square(1)
+        json_dict = sq.to_dictionary()
+        json_string = Base.to_json_string([json_dict])
+        self.assertEqual(type(json_string), str)
+
+    def test_to_json_value(self):
+        """Testing the json string"""
+        sq = Square(1, 0, 0, 609)
+        json_dict = sq.to_dictionary()
+        json_string = Base.to_json_string([json_dict])
+        self.assertEqual(json.loads(json_string),
+                         [{"id": 609, "y": 0, "size": 1, "x": 0}])
+
+    def test_to_json_None(self):
+        """test the json string"""
+        sq = Square(1, 0, 0, 609)
+        json_dict = sq.to_dictionary()
+        json_string = Base.to_json_string(None)
+        self.assertEqual(json_string, "[]")
+
+    def test_to_json_empty(self):
+        """test the json string"""
+        sq = Square(1, 0, 0, 609)
+        json_dict = sq.to_dictionary()
+        json_string = Base.to_json_string([])
+        self.assertEqual(json_string, "[]")
+
+
+if __name__ == "__main__":
     unittest.main()
 
