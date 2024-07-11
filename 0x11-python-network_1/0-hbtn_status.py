@@ -1,6 +1,6 @@
 #!/usr/bin/python3
+"""this module contains a script that fetvhes a  url status"""
 import urllib.request
-"""This module contains a script that fetches a url status"""
 
 if __name__ == "__main__":
     url = 'https://alx-intranet.hbtn.io/status'
