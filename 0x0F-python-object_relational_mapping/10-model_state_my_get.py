@@ -6,13 +6,14 @@ from sqlalchemy.orm import sessionmaker
 import sys
 
 if __name__ == "__main__":
-    url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(sys.argv[1], sys.argv[2], sys.argv[3])
-    engine = create_engine(url)
+    eng_url = "mysql+mysqldb://{}:{}@localhost:3306/{}".format(
+            argv[1], argv[2], argv[3]
+            )
+    engine = create_engine(eng_url)
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    state_name = argv[4]
-    state = session.query(State).filter(State.name == state_name).first()
+    state = session.query(State).filter(State.name == argv[4]).first()
     if state:
         print(state.id)
     else:
