@@ -96,11 +96,12 @@ class Rectangle(Base):
         """display a rectangle to stdout"""
         for y in range(self.y):
             print()
-        for x in range(self.height):
+        for i in range(self.height):
             for x in range(self.x):
                 print(" ", end='')
-            print ("#" * self.__width)
-        print()
+            for j in range(self.width):
+                print("#", end='')
+            print()
 
     def update(self, *args, **kwargs):
         """Updates a rectangle's attributes"""
