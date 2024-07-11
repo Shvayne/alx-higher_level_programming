@@ -1,10 +1,9 @@
 #!/usr/bin/python3
+"""sends a post request to a url"""
 import urllib.request
 import urllib.parse
 import sys
-"""
-sends a post request to a url
-"""
+
 if __name__ == "__main__":
     email = sys.argv[2]
     url = sys.argv[1]
