@@ -1,7 +1,10 @@
 #!/usr/bin/python3
+"""This is the base class of the project"""
 import json
 import os
-"""This is the base class of the project"""
+import csv
+import turtle
+
 class Base:
     """this is the base class for the project"""
     __nb_objects = 0
