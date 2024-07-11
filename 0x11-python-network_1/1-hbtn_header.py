@@ -1,10 +1,9 @@
 #!/usr/bin/python3
+"""A script that takes a url and sends a request and display
+the result of the variable found in the header"""
 import urllib.request
 import sys
-"""
-A script to take a url and send a request 
-and display the result of the variable found in the header
-"""
+
 if __name__ == "__main__":
     url = sys.argv[1]
     with urllib.request.urlopen(url) as response:
